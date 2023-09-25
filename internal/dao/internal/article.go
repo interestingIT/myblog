@@ -20,44 +20,26 @@ type ArticleDao struct {
 
 // ArticleColumns defines and stores column names for table article.
 type ArticleColumns struct {
-	Id          string //
-	GrpId       string // 分组id
-	Title       string // 标题
-	Author      string // 作者
-	Thumb       string // 图片地址
-	Tags        string // 标签，依英文逗号隔开
-	Description string // 简介
-	Content     string // 内容
-	Order       string // 排序，越大越靠前
-	Ontop       string // 是否置顶
-	Onshow      string // 是否显示
-	Hist        string // 点击数
-	Post        string // 评论数
-	CreatedAt   string // 创建时间
-	UpdatedAt   string // 更新时间
-	DeletedAt   string // 删除时间
-	LastedAt    string // 最后浏览时间
+	Id          string // 文章id
+	Title       string // 文章标题
+	TitleImage  string // 文章题图
+	Description string // 文章描述
+	CreateTime  string // 创建时间
+	UpdateTime  string // 最后一次更新时间
+	IsDeleted   string // 删除标志位：0：未删除 1：已删除
+	ReadNum     string // 被阅读次数
 }
 
 // articleColumns holds the columns for table article.
 var articleColumns = ArticleColumns{
 	Id:          "id",
-	GrpId:       "grp_id",
 	Title:       "title",
-	Author:      "author",
-	Thumb:       "thumb",
-	Tags:        "tags",
+	TitleImage:  "title_image",
 	Description: "description",
-	Content:     "content",
-	Order:       "order",
-	Ontop:       "ontop",
-	Onshow:      "onshow",
-	Hist:        "hist",
-	Post:        "post",
-	CreatedAt:   "created_at",
-	UpdatedAt:   "updated_at",
-	DeletedAt:   "deleted_at",
-	LastedAt:    "lasted_at",
+	CreateTime:  "create_time",
+	UpdateTime:  "update_time",
+	IsDeleted:   "is_deleted",
+	ReadNum:     "read_num",
 }
 
 // NewArticleDao creates and returns a new DAO object for table data access.

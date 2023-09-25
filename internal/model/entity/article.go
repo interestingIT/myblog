@@ -10,21 +10,12 @@ import (
 
 // Article is the golang structure for table article.
 type Article struct {
-	Id          uint        `json:"id"          description:""`
-	GrpId       uint        `json:"grpId"       description:"分组id"`
-	Title       string      `json:"title"       description:"标题"`
-	Author      string      `json:"author"      description:"作者"`
-	Thumb       string      `json:"thumb"       description:"图片地址"`
-	Tags        string      `json:"tags"        description:"标签，依英文逗号隔开"`
-	Description string      `json:"description" description:"简介"`
-	Content     string      `json:"content"     description:"内容"`
-	Order       int         `json:"order"       description:"排序，越大越靠前"`
-	Ontop       uint        `json:"ontop"       description:"是否置顶"`
-	Onshow      uint        `json:"onshow"      description:"是否显示"`
-	Hist        uint        `json:"hist"        description:"点击数"`
-	Post        uint        `json:"post"        description:"评论数"`
-	CreatedAt   *gtime.Time `json:"createdAt"   description:"创建时间"`
-	UpdatedAt   *gtime.Time `json:"updatedAt"   description:"更新时间"`
-	DeletedAt   *gtime.Time `json:"deletedAt"   description:"删除时间"`
-	LastedAt    *gtime.Time `json:"lastedAt"    description:"最后浏览时间"`
+	Id          uint64      `json:"id"          description:"文章id"`
+	Title       string      `json:"title"       description:"文章标题"`
+	TitleImage  string      `json:"titleImage"  description:"文章题图"`
+	Description string      `json:"description" description:"文章描述"`
+	CreateTime  *gtime.Time `json:"createTime"  description:"创建时间"`
+	UpdateTime  *gtime.Time `json:"updateTime"  description:"最后一次更新时间"`
+	IsDeleted   int         `json:"isDeleted"   description:"删除标志位：0：未删除 1：已删除"`
+	ReadNum     uint        `json:"readNum"     description:"被阅读次数"`
 }
